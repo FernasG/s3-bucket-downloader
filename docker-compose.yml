@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  s3-bucket-downloader:
+    build: .
+    image: s3-bucket-downloader:latest
+    container_name: s3-bucket-downloader
+    volumes:
+      - ${PWD}:/app
+    env_file:
+      - .env
+    environment:
+      - TZ=America/Sao_Paulo
